@@ -2,9 +2,9 @@
 
 int main(){
 
-    Book* DeathNote = new Book("DeathNote", "N/A", "Mange series about a deadly book. Anything written in the book will come true including death.", 15.99);
+    Book* DeathNote = new Book("DeathNote", "N/A", "Manga series about a deadly book. Anything written in the book will come true including death.");
     
-    DeathNote->addStock(3);
+    // DeathNote->addStock(3);
     DeathNote->printInfo();
     
 
