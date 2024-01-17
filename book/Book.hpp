@@ -9,35 +9,22 @@ class Book;
 class Book{
     public:
         static int bookID;
+        int ID;
         std::string title;
         std::string author;
-        
         std::string description;
         // double price;
         // int currStock;
         // int sold;
-
+        Book();
         Book(string title, string author, string description);
         ~Book(){}
         
         string getName();
-        string getAuthor();
-        
+        string getAuthor();     
         string getDescription();
 
-
-        // int CheckCurrentStock();
-        // double getPrice();
-        // void addStock(int restock){
-        //     currStock += restock;
-
-        // }
-
-        // void sellBook(int saleNum){
-        //     currStock -= saleNum;
-        //     sold += saleNum;
-        // }
-        virtual void printInfo() = 0;
+        virtual void printInfo();
 
     private:
         // double purchased_price;

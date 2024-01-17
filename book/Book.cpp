@@ -6,6 +6,7 @@ using namespace std;
 
     Book::Book(std::string title, std::string author, std::string description){
         bookID++;
+        ID = bookID;
         this->title = title;
         this->author = author;
         this->description = description;
