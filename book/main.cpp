@@ -3,13 +3,14 @@
 
 int main(){
 
-    Book* DeathNote = new Book("DeathNote", "N/A", "Manga series about a deadly book. Anything written in the book will come true including death.");
+    Book* DeathNote = new Book("DeathNote", "N/A", "Manga series about a deadly book. Anything written in the book will come true including death.", 2004);
     Inventory* BookShelf = new Inventory("A");
+     DeathNote->setPrice(18.99);
     BookShelf->addBook(DeathNote, 3);
-
+   
     // DeathNote->addStock(3);
     DeathNote->printInfo();
-    BookShelf->printInfo();
+    BookShelf->printAll();
     
 
     return 0;
