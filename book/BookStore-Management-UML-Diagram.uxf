@@ -4,15 +4,16 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>130</y>
-      <w>190</w>
-      <h>170</h>
+      <x>60</x>
+      <y>110</y>
+      <w>240</w>
+      <h>190</h>
     </coordinates>
     <panel_attributes>*BookStore*
 --
 + storeName : string
-+ owner : string
++ owner : Owner
++ employees : vector&lt;Employee&gt;
 + inventories : Inventory
 --
 + BookStore()
@@ -28,14 +29,14 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>250</x>
-      <y>130</y>
+      <x>810</x>
+      <y>120</y>
       <w>210</w>
       <h>250</h>
     </coordinates>
     <panel_attributes>*Book*
 --
-_ ID : int
++ ID : _int
 + title : string
 + author : string
 + description : string
@@ -54,8 +55,8 @@ _ ID : int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>30</x>
-      <y>370</y>
+      <x>410</x>
+      <y>120</y>
       <w>200</w>
       <h>200</h>
     </coordinates>
@@ -76,26 +77,36 @@ _ ID : int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
-      <y>500</y>
-      <w>100</w>
-      <h>30</h>
+      <x>430</x>
+      <y>380</y>
+      <w>350</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>*Owner*
 --
++ storeOwned : vector&lt;string, string&gt; //location, name
+
+--
++ Owner()
++ setBudget()
++ checkBudget()
++ currProfit()
+
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>410</x>
-      <y>490</y>
-      <w>150</w>
-      <h>70</h>
+      <x>140</x>
+      <y>380</y>
+      <w>220</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>/Person/
 --
+
++ ID : _int
 + firstName : string
 + lastName : string
 + age : int
@@ -103,5 +114,90 @@ _ ID : int
 --
 + printDetail()</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>160</y>
+      <w>230</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>440</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>540</y>
+      <w>140</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>*Employee*
+--
++ ID
++ position: string
+--
++ Employee()
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>260</x>
+      <y>520</y>
+      <w>190</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>170.0;70.0;10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>170</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>290</y>
+      <w>430</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;410.0;50.0;410.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>70</x>
+      <y>290</y>
+      <w>380</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;340.0;360.0;340.0</additional_attributes>
   </element>
 </diagram>
