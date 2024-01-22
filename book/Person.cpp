@@ -7,4 +7,15 @@
         this->age = age;
         this->gender = gender;
         ID++;
+
+    }
+
+    void Person::printDetail(){
+        std::cout<<"Name: " << firstName << " " << lastName<<std::endl;
+        std::cout<<"Age: "<<age<<std::endl;
+        std::cout<<"Gender: "<<gender<<std::endl;
+    }
+
+    Person::~Person(){
+        std::cout<<"Person died."<<std::endl;
     }
