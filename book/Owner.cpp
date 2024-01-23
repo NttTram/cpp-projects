@@ -32,12 +32,22 @@ void Owner::updateProfit(double profit){
     std::cout<<"---Updated profit---"<<std::endl;
     printf("Current profit is: $%.2f\n", profit);
 }
+
+
+double Owner::getBudget(){
+    return budget;
+}
+
+double Owner::getProfit(){
+    return profit;
+}
+
 void Owner::printDetail(){
     //print owner's detail
     Person::printDetail();
 
     //print all stores owned
-    std::cout<<"---List of stores owned---"<<std::endl;
+                                                                std::cout<<"---List of stores owned---"<<std::endl;
     for(int i = 0; i < storeOwned.size(); i++){
         std::cout<<"Store name: "<<storeOwned[i].second<<"\nLocation: "<<storeOwned[i].first<<std::endl;
         std::cout<<std::endl;

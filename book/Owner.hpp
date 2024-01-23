@@ -18,6 +18,9 @@ class Owner : virtual public Person{
         void checkBudget();
         void currProfit();
         void updateProfit(double profit);
+
+        double getBudget();
+        double getProfit();
         void printDetail();
 
         private:

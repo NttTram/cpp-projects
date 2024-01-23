@@ -4,22 +4,23 @@
 #include <iostream>
 #include "Inventory.hpp"
 #include "Book.hpp"
+#include "Owner.hpp"
 
 class BookStore;
 class BookStore{
     public:
         std::string storeName;
-        std::string owner;
+        Owner* owner;
         // std::vector<Employee> employees;
         std::map<std::string, Inventory*> inventories;
 
         BookStore();
         ~BookStore();
 
-        BookStore(std::string storeName, std::string owner);
+        BookStore(std::string storeName, oOwner* owner);
 
-        void buyBook(int bookID, int quantity);
-        void sellBook(int bookID, int quantity);
+        void buyBook(Book* book, int quantity);
+        void sellBook(Book* book, int quantity);
 
         void addInventory(Inventory* invent);
         void removeInventory(Inventory* invent);
