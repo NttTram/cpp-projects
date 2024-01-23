@@ -8,7 +8,7 @@ class Owner;
 class Owner : virtual public Person{
     public:
         std::vector<std::pair<std::string, std::string>> storeOwned; //location, name
-
+        int ID;
         Owner();
         ~Owner();
 
