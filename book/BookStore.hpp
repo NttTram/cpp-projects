@@ -9,7 +9,7 @@ class BookStore;
 class BookStore{
     public:
         std::string storeName;
-        // std::string owner;
+        std::string owner;
         // std::vector<Employee> employees;
         std::map<std::string, Inventory*> inventories;
 

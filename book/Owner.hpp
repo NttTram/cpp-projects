@@ -12,12 +12,12 @@ class Owner : virtual public Person{
         Owner();
         ~Owner();
 
-        Owner(std::string storeLocation, std::string storeName);
+        Owner(std::string firstName, std::string lastName, int age, char gender);
         void addOwnership(std::string storeLocation, std::string storeName);
-        void setBudget();
+        void setBudget(double budget);
         void checkBudget();
         void currProfit();
-        void updateProfit();
+        void updateProfit(double profit);
         void printDetail();
 
         private:

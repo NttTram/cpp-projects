@@ -1,5 +1,6 @@
 #include "Book.hpp"
 #include "Inventory.hpp"
+#include "Owner.hpp"
 
 int main(){
 
@@ -12,6 +13,11 @@ int main(){
     DeathNote->printInfo();
     BookShelf->printAll();
     
+    Owner* Tim = new Owner("Tim", "Lee", 28, 'M');
+
+    Tim->setBudget(15000);
+    Tim->addOwnership("VIC",BookShelf->name);
+    Tim->printDetail();
 
     return 0;
 }
