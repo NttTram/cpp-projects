@@ -35,7 +35,7 @@
     void BookStore::sellBook(Book* book, int quantity){
         //find book and check if enough quantity to sell
         //if enough then remove book from Inventory
-
+        if(inventories["A"])
 
         //update sale price, profit
     }
@@ -46,4 +46,5 @@
     }
     void BookStore::removeInventory(Inventory* invent){
         //remove inventory from the bookstore
+        inventories[invent->name].erase();
     }
