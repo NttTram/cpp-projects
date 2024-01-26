@@ -12,7 +12,7 @@
 
     void BookStore::buyBook(Book* book, int quantity){
         double cost = quantity * book->getPrice();
-        res = owner->getBudget() - cost;
+        double res = owner->getBudget() - cost;
         //buy books to restock inventory and how many copies of it
         if(inventories.empty()){
             std::cout<<"---Please add inventory first---"<<std::endl;
@@ -24,6 +24,7 @@
             }else{
                 inventories["A"]->addBook(book, quantity);
                 std::cout<<"---Book(s) added---"<<std::endl;
+                owner->updateBudget(-cost);
                 owner->checkBudget();
 
             }
@@ -31,7 +32,7 @@
         
         //will minus the budget. If not enough budget then cannot buy
     }
-    void BookStore::sellBook(int bookID, int quantity){
+    void BookStore::sellBook(Book* book, int quantity){
         //find book and check if enough quantity to sell
         //if enough then remove book from Inventory
 
@@ -41,6 +42,7 @@
 
     void BookStore::addInventory(Inventory* invent){
         //Add inventory to the bookstore
+        inventories[invent->name] = invent;
     }
     void BookStore::removeInventory(Inventory* invent){
         //remove inventory from the bookstore

@@ -17,6 +17,9 @@ void Owner::setBudget(double budget){
     //set budget
     this->budget = budget;
 }
+void Owner::updateBudget(double num){
+    budget += num;
+}
 void Owner::checkBudget(){
     //Print budget
     printf("Available budget: $%.2f\n", budget);

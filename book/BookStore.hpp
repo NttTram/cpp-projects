@@ -17,7 +17,7 @@ class BookStore{
         BookStore();
         ~BookStore();
 
-        BookStore(std::string storeName, oOwner* owner);
+        BookStore(std::string storeName, Owner* owner);
 
         void buyBook(Book* book, int quantity);
         void sellBook(Book* book, int quantity);

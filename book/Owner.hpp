@@ -16,6 +16,7 @@ class Owner : virtual public Person{
         void addOwnership(std::string storeLocation, std::string storeName);
         void setBudget(double budget);
         void checkBudget();
+        void updateBudget(double num);
         void currProfit();
         void updateProfit(double profit);
 

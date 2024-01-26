@@ -4,18 +4,18 @@
 #include "BookStore.hpp"
 
 int main(){
-
+    Owner* Tim = new Owner("Tim", "Lee", 28, 'M');
     Book* DeathNote = new Book("DeathNote", "N/A", "Manga series about a deadly book. Anything written in the book will come true including death.", 2004);
-    BookStore* cat_cafe = new BookStore("Meow meow cafe", "Tim");
+    BookStore* cat_cafe = new BookStore("Meow meow cafe", Tim);
     Inventory* BookShelf = new Inventory("A");
      DeathNote->setPrice(18.99);
-    BookShelf->addBook(DeathNote, 3);
+    // BookShelf->addBook(DeathNote, 3);
    
     // DeathNote->addStock(3);
     DeathNote->printInfo();
     BookShelf->printAll();
     
-    Owner* Tim = new Owner("Tim", "Lee", 28, 'M');
+    
 
     Tim->setBudget(15000);
     Tim->addOwnership("VIC",BookShelf->name);
@@ -23,6 +23,12 @@ int main(){
     Tim->printDetail();
     Tim->currProfit();
     Tim->updateProfit(-88.50);
+    cat_cafe->buyBook(DeathNote, 3);
 
+    cat_cafe->addInventory(BookShelf);
+    cat_cafe->buyBook(DeathNote, 3);
+    
+
+    
     return 0;
 }
