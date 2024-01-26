@@ -19,9 +19,10 @@ class Inventory{
 
         void addBook(Book* book, int quantity);
         void removeBook(int bookID);
-        bool findBook(Book* book);
+        
         Book* getBook(int bookID);
         int getStock(int bookID);
+        void updateStock(Book* book, int quantity);
         void printAll();
         
 

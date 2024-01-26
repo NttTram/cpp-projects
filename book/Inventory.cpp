@@ -37,8 +37,15 @@
             return books[bookID].second;
         }
 
-        bool Inventory::findBook(Book* book){
-            
+        void Inventory::updateStock(Book* book, int quantity){
+           
+            if(books[book->ID].second > quantity){
+                 books[book->ID].second -= quantity;
+            }else{
+                books[book->ID].second = 0;
+            }
+
+            std::cout<<"---Updated book stock---"<<std::endl;
         }
 
         //Print all books in the inventory and it's quantity

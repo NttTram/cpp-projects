@@ -35,7 +35,15 @@
     void BookStore::sellBook(Book* book, int quantity){
         //find book and check if enough quantity to sell
         //if enough then remove book from Inventory
-        if(inventories["A"])
+        double cost = book->getPrice() * quantity;
+        if(inventories["A"]->getBook(book->ID)){
+            if(inventories["A"]->getStock(book->ID) >= quantity){
+                std::cout<<"---Sell book successfully---"<<std::endl;
+                owner->updateProfit(cost);
+                owner->getProfit();
+                inventories["A"]->updateStock(book, quantity);
+            }
+        }
 
         //update sale price, profit
     }
@@ -46,5 +54,5 @@
     }
     void BookStore::removeInventory(Inventory* invent){
         //remove inventory from the bookstore
-        inventories[invent->name].erase();
+        inventories.erase(invent->name);
     }

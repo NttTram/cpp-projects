@@ -27,7 +27,8 @@ int main(){
 
     cat_cafe->addInventory(BookShelf);
     cat_cafe->buyBook(DeathNote, 3);
-    
+    cat_cafe->sellBook(DeathNote, 2);
+    cat_cafe->sellBook(DeathNote, 2);
 
     
     return 0;
