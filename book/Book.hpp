@@ -14,7 +14,7 @@ class Book{
         std::string author;
         std::string description;
         int year;
-        // double price;
+        
         // int currStock;
         // int sold;
         Book();

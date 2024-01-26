@@ -37,6 +37,10 @@
             return books[bookID].second;
         }
 
+        bool Inventory::findBook(Book* book){
+            
+        }
+
         //Print all books in the inventory and it's quantity
         void Inventory::printAll(){
             for (auto it = books.cbegin(); it != books.cend(); it++){
