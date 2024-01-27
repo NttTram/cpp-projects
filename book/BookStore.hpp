@@ -19,7 +19,7 @@ class BookStore{
 
         BookStore(std::string storeName, Owner* owner);
 
-        void buyBook(Book* book, int quantity);
+        void buyBook(Book* book, int quantity, double salePrice);
         void sellBook(Book* book, int quantity);
 
         void addInventory(Inventory* invent);

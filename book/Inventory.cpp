@@ -12,38 +12,41 @@
         }
         
         // Add existing book to inventory annd the numbber on quantity
-        void Inventory::addBook(Book* book, int quantity){
+        void Inventory::addBook(Book* book, int quantity, double salePrice){
             double cost = book->getPrice() * quantity;
-            books[book->ID] = std::make_pair(book, quantity);
+            books[book] = std::make_pair(quantity, salePrice);
             totalCost += cost;
             std::cout<<"Added book: "<<book->title<<"\nWhich cost: $"<<cost<<std::endl;
             std::cout<<std::endl;
         }
 
         // Remove book from inventory with ID
-        void Inventory::removeBook(int bookID){
-            books.erase(bookID);
+        void Inventory::removeBook(Book* book){
+            books.erase(book);
         }
 
         // Get the object Book by ID
-        Book* Inventory::getBook(int bookID){
+        bool Inventory::findBook(Book* book){
             // Uses '.' because it's in std::pair. 
             // books: <ID, std::pair(Book, quantity)>
-            return books[bookID].first;
+            if(books.count(book))
+                return true;
+            return false;
+            
         }
 
         // Check current stock on requested book
-        int Inventory::getStock(int bookID){
+        int Inventory::getStock(Book* book){
             // books: <ID, std::pair(Book, quantity)>
-            return books[bookID].second;
+            return books[book].first;
         }
 
         void Inventory::updateStock(Book* book, int quantity){
            
-            if(books[book->ID].second > quantity){
-                 books[book->ID].second -= quantity;
+            if(books[book].first > quantity){
+                 books[book].first -= quantity;
             }else{
-                books[book->ID].second = 0;
+                books[book].first = 0;
             }
 
             std::cout<<"---Updated book stock---"<<std::endl;
@@ -53,7 +56,7 @@
         //Print all books in the inventory and it's quantity
         void Inventory::printAll(){
             for (auto it = books.cbegin(); it != books.cend(); it++){
-                std::cout<<"Book ID: "<< it->first<<"\nTitle: "<< it->second.first->title<<"\nCurrent Stock: "<<it->second.second;
+                std::cout<<"Book ID: "<< it->first->bookID<<"\nTitle: "<< it->first->title<<"\nCurrent Stock: "<<it->second.first<<"\nSale Price: "<<it->second.second<<std::endl;
             }
             std::cout<<std::endl;
             

@@ -10,18 +10,18 @@ class Inventory;
 class Inventory{
     public:
         std::string name;
-        // books = BookID(int), book(Book), quantity(int)
-        std::map<int, std::pair<Book*, int>> books;
+        // books = book(Book*), <quantity(int), salePrice>
+        std::map<Book*, std::pair<int, int>> books;
         double totalCost;
         Inventory();
         Inventory(std::string name);
         ~Inventory();
 
-        void addBook(Book* book, int quantity);
-        void removeBook(int bookID);
+        void addBook(Book* book, int quantity, double salePrice);
+        void removeBook(Book* book);
         
-        Book* getBook(int bookID);
-        int getStock(int bookID);
+        bool findBook(Book* book);
+        int getStock(Book* book);
         void updateStock(Book* book, int quantity);
         void printAll();
         

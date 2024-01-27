@@ -23,12 +23,12 @@ int main(){
     Tim->printDetail();
     Tim->currProfit();
    
-    cat_cafe->buyBook(DeathNote, 3);
+    cat_cafe->buyBook(DeathNote, 3, 20.00);
 
     cat_cafe->addInventory(BookShelf);
-    cat_cafe->buyBook(DeathNote, 3);
+    cat_cafe->buyBook(DeathNote, 3, 20.00);
     cat_cafe->sellBook(DeathNote, 2);
-    cat_cafe->sellBook(DeathNote, 2);
+    cat_cafe->sellBook(DeathNote, 1);
 
     
     return 0;

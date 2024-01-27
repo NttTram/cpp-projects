@@ -27,15 +27,17 @@ void Owner::checkBudget(){
 }
 void Owner::currProfit(){
     //Checking current profits
-    printf("Current profit: $%.2f\n", profit);
+    printf("Total profit: $%.2f\n", profit);
     std::cout<<std::endl;
 }
 void Owner::updateProfit(double profit){
     //Update adding the profit
     //Need to look out of negative numbers?
+    
     this->profit += profit;
     std::cout<<"---Updated profit---"<<std::endl;
-    printf("Current profit is: $%.2f\n", profit);
+    printf("Transaction profit: $%.2f\n", profit);
+    currProfit();
     std::cout<<std::endl;
 }
 
