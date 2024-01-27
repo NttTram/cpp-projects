@@ -17,6 +17,7 @@
             books[book->ID] = std::make_pair(book, quantity);
             totalCost += cost;
             std::cout<<"Added book: "<<book->title<<"\nWhich cost: $"<<cost<<std::endl;
+            std::cout<<std::endl;
         }
 
         // Remove book from inventory with ID
@@ -46,6 +47,7 @@
             }
 
             std::cout<<"---Updated book stock---"<<std::endl;
+            std::cout<<std::endl;
         }
 
         //Print all books in the inventory and it's quantity

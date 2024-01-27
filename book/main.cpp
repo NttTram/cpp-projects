@@ -22,7 +22,7 @@ int main(){
     Tim->addOwnership("3020,, VIC", cat_cafe->storeName);
     Tim->printDetail();
     Tim->currProfit();
-    Tim->updateProfit(-88.50);
+   
     cat_cafe->buyBook(DeathNote, 3);
 
     cat_cafe->addInventory(BookShelf);

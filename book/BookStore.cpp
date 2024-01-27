@@ -16,16 +16,19 @@
         //buy books to restock inventory and how many copies of it
         if(inventories.empty()){
             std::cout<<"---Please add inventory first---"<<std::endl;
+            std::cout<<std::endl;
         }else{
             if(res <= 0.00){
                 std::cout<<"---Budget not enough to buy---"<<std::endl;
                 owner->checkBudget();
                 printf("The book(s) cost: %.2f for %d quantity", cost, quantity);
+                std::cout<<std::endl;
             }else{
                 inventories["A"]->addBook(book, quantity);
                 std::cout<<"---Book(s) added---"<<std::endl;
                 owner->updateBudget(-cost);
                 owner->checkBudget();
+                std::cout<<std::endl;
 
             }
         }
@@ -38,14 +41,23 @@
         double cost = book->getPrice() * quantity;
         if(inventories["A"]->getBook(book->ID)){
             if(inventories["A"]->getStock(book->ID) >= quantity){
+                 //update sale price, profit
                 std::cout<<"---Sell book successfully---"<<std::endl;
                 owner->updateProfit(cost);
                 owner->getProfit();
                 inventories["A"]->updateStock(book, quantity);
+                std::cout<<std::endl;
+            }else{
+                std::cout<<"---Not enough quantity to sell---"<<std::endl;
+                std::cout<<"--Only "<<inventories["A"]->getStock(book->ID)<<" of copies this book are available--"<<std::endl;
+                std::cout<<std::endl;
             }
+        }else {
+            std::cout<<"---Book not found---"<<std::endl;
+            std::cout<<std::endl;
         }
 
-        //update sale price, profit
+       
     }
 
     void BookStore::addInventory(Inventory* invent){

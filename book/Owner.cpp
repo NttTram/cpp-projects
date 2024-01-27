@@ -23,10 +23,12 @@ void Owner::updateBudget(double num){
 void Owner::checkBudget(){
     //Print budget
     printf("Available budget: $%.2f\n", budget);
+    std::cout<<std::endl;
 }
 void Owner::currProfit(){
     //Checking current profits
     printf("Current profit: $%.2f\n", profit);
+    std::cout<<std::endl;
 }
 void Owner::updateProfit(double profit){
     //Update adding the profit
@@ -34,6 +36,7 @@ void Owner::updateProfit(double profit){
     this->profit += profit;
     std::cout<<"---Updated profit---"<<std::endl;
     printf("Current profit is: $%.2f\n", profit);
+    std::cout<<std::endl;
 }
 
 
