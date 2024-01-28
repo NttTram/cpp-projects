@@ -7,7 +7,12 @@
 #include <iostream>
 #include <vector>
 #include <climits>
+#include <json/json.h>
+#include <json/writer.h>
+#include <fstream>
+
 using namespace std;
+
 
 void Border(vector<string> &text, string title){
     //Clear outputs
@@ -57,6 +62,21 @@ int validInput(vector<string> opt){
 }
 
 int main(){
+    Json::Value root;
+    Json::Reader reader;
+    Json::StyledStreamWriter writer;
+    std::ofstream book_file;
+    
+    root["title"] = "DeathNote";
+    root["author"] = "N/A";
+    root["year"] = 1999;     
+    cout<<root;
+
+    book_file.open("book.json");
+    writer.write(book_file, root);
+    book_file.close();
+
+
     vector<string> login = {"Customer", "Admin"};
     Border(login, "WELCOME");
     int signin;
